@@ -1,6 +1,3 @@
-import { toast } from 'react-hot-toast';
-import { getDoc, doc } from 'firebase/firestore';
-import { db } from '@/db/firebase';
 export const validateRegistraion = async (
   displayName,
   email,

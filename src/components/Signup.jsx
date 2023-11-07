@@ -10,6 +10,7 @@ import { validateRegistraion } from './utils/account';
 
 const Signup = () => {
   const router = useRouter();
+
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -39,14 +40,15 @@ const Signup = () => {
       await updateProfile(res.user, {
         displayName,
         email,
-        profilePicUrl: '',
+        photoURl: '',
       });
 
       await setDoc(doc(db, 'users', res.user.uid), {
+        uid: res.user.uid,
         email,
         displayName,
         handle: '',
-        profilePicUrl: '',
+        photoURl: '',
         dob: '',
         bio: '',
         gender: '',
@@ -77,12 +79,13 @@ const Signup = () => {
         }, 2000);
       });
     } catch (err) {
-      console.log(err);
+      console.log(err?.code);
       if (err.message.includes('email-already-in-use')) {
         toast.error('Email already in use');
       } else {
         toast.error('Something went wrong');
       }
+      setLoading(false);
     } finally {
       setLoading(false);
     }

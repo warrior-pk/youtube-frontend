@@ -1,4 +1,6 @@
 'use client';
+
+// this is just a dummy page , '/' gets redirected to '/home'
 import toast from 'react-hot-toast';
 
 const notify = () => toast.success('Here is your toast.');

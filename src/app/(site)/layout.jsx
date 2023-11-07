@@ -1,8 +1,8 @@
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Toaster from '@/context/toastContext';
-import { useContext } from 'react';
-import { AuthContext } from '@/context/authContext';
+import { AuthContextProvider } from '@/context/authContext';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -13,10 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
-        {children}
-        <Toaster />
-      </body>
+      <AuthContextProvider>
+        <body className={inter.className}>
+          {children}
+          <Toaster />
+        </body>
+      </AuthContextProvider>
     </html>
   );
 }
