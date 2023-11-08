@@ -1,6 +1,11 @@
 'use client';
 import React from 'react';
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  setPersistence,
+  browserLocalPersistence,
+} from 'firebase/auth';
 const { auth, db } = require('@/db/firebase');
 import { useState } from 'react';
 import toast from 'react-hot-toast';
@@ -40,7 +45,7 @@ const Signup = () => {
       await updateProfile(res.user, {
         displayName,
         email,
-        photoURl: '',
+        photoURL: '',
       });
 
       await setDoc(doc(db, 'users', res.user.uid), {
@@ -48,7 +53,7 @@ const Signup = () => {
         email,
         displayName,
         handle: '',
-        photoURl: '',
+        photoURL: '',
         dob: '',
         bio: '',
         gender: '',
@@ -75,7 +80,7 @@ const Signup = () => {
       }).then(() => {
         toast.success('Account created successfully!');
         setTimeout(() => {
-          router.push('/login');
+          router.push('/home');
         }, 2000);
       });
     } catch (err) {

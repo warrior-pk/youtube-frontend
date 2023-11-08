@@ -2,7 +2,8 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '@/context/authContext';
 import { redirect } from 'next/navigation';
-import Loading from '@/components/loading';
+import Loading from '@/components/Loading';
+import Navbar from '@/components/Navbar';
 
 const Layout = ({ children }) => {
   // const { loadingCurrentUser, currentUser } = useContext(AuthContext);
@@ -29,8 +30,7 @@ const Layout = ({ children }) => {
       {/* {!shouldRender && <Loading />} */}
       {/* {shouldRender && ( */}
       <>
-        <div className='bg-blue-500'>Layout </div>
-        {children}
+        <Navbar children={children} />
       </>
       {/* )} */}
     </>

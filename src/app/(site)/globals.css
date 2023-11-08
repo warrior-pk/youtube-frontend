@@ -12,3 +12,16 @@
   color: #010101;
   background: #ffc629;
 }
+
+@layer utilities {
+  .chosen {
+    @apply rounded-lg bg-slate-100 font-bold;
+  }
+  .logo {
+    /* font-family: 'Geologica', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Satisfy', cursive; */
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}

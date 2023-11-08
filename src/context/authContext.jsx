@@ -12,9 +12,11 @@ export const AuthContextProvider = ({ children }) => {
     const unsub = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       setLoading(false);
-      console.log(user);
+      // console.log(user);
     });
-
+    if (!currentUser) {
+      console.log('no user');
+    }
     return () => {
       unsub();
     };

@@ -2,25 +2,19 @@
 import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '@/context/authContext';
-import { signOut } from 'firebase/auth';
-import { auth } from '@/db/firebase';
-
+import { toast } from 'react-hot-toast';
 const Page = () => {
   const { currentUser: user } = useContext(AuthContext);
   console.log('user ', user);
-  const handleSubmit = (e) => {
-    console.log('handle signout');
-    signOut(auth);
-  };
-  return (
-    <div>
-      Home
-      <div className='div'>
-        <button onClick={handleSubmit}>Logout</button>
-      </div>
-      <div>{user && user.displayName}</div>
-    </div>
-  );
+
+  useEffect(() => {
+    if (user) {
+      toast(`Hi, ${user.displayName}`, {
+        icon: '👏',
+      });
+    }
+  }, [user]);
+  return <></>;
 };
 
 export default Page;
