@@ -1,0 +1,45 @@
+import React, { useEffect, useState } from 'react';
+import { doc, onSnapshot } from 'firebase/firestore';
+import { currentuser, db } from '@/db/dummy_data';
+
+const Chats = () => {
+  const [chats, setChats] = useState([]);
+  useEffect(() => {
+    const getChats = () => {
+      const unsub = onSnapshot(doc(db, 'userChats', currentuser.uid), (doc) => {
+        setChats(doc.data());
+      });
+      return () => {
+        unsub();
+      };
+    };
+    currentuser.uid && getChats();
+  }, [currentuser.uid]);
+  console.log(Object.entries(chats));
+  return (
+    <div className='userChats'>
+      {Object.entries(chats)?.map((item) => (
+        <div
+          key={item[0]}
+          className='flex cursor-pointer items-center gap-3 p-3 text-white hover:bg-yellow-700'
+        >
+          <img
+            className='h-10 w-10 rounded-full object-cover'
+            src={item[1].userInfo.photoURL}
+            alt=''
+          />
+          <div className='userChatInfo'>
+            <span className='text-lg font-medium'>
+              {item[1].userInfo.displayName}
+            </span>
+            <p className='text-lightgray text-sm'>
+              {item[1].userInfo.lastMessage?.text}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Chats;
