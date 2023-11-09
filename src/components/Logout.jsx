@@ -13,7 +13,7 @@ const Logout = () => {
   return (
     <div
       onClick={handleSubmit}
-      className='items flex cursor-pointer gap-2 px-5 py-2 text-lg'
+      className='items mb-52 mt-auto flex justify-center px-2 py-2 text-lg md:px-5 lg:justify-start lg:gap-2'
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'

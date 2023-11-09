@@ -14,6 +14,9 @@ module.exports = {
         'text-light': '#f0f0f0',
         'text-primary': '#333333',
       },
+      height: {
+        screen: '100svh',
+      },
     },
   },
   plugins: [],
