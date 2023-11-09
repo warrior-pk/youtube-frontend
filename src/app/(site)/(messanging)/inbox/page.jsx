@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '@/components/messanging/Sidebar';
 import Chat from '@/components/messanging/Chat';
+import { db } from '@/db/firebase';
+
 
 const Page = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -24,7 +26,6 @@ const Page = () => {
   const toggleMessageBox = () => {
     setIsMessageBoxOpen(!isMessageBoxOpen);
   };
-
   return (
     <div className='flex h-screen items-center justify-center bg-black'>
       <div className='flex h-4/5 w-4/5 overflow-hidden rounded-lg border border-solid border-black'>
@@ -32,7 +33,7 @@ const Page = () => {
           isSmallScreen={isSmallScreen}
           toggleMessageBox={toggleMessageBox}
         />
-        {isSmallScreen ? isMessageBoxOpen && <Chat /> : <Chat />}
+        {isSmallScreen ? isMessageBoxOpen && <Chat /> : <Chat/>}
       </div>
     </div>
   );
