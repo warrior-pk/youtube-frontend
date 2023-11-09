@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { doc, onSnapshot } from 'firebase/firestore';
-import { currentuser, db } from '@/db/dummy_data';
+import { currentuser } from '@/db/dummy_data';
+import {db} from '@/db/firebase'
 
 const Chats = () => {
   const [chats, setChats] = useState([]);
   useEffect(() => {
     const getChats = () => {
+      console.log("indside chts",db)
       const unsub = onSnapshot(doc(db, 'userChats', currentuser.uid), (doc) => {
         setChats(doc.data());
       });
