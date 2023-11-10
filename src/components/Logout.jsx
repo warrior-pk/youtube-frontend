@@ -1,13 +1,13 @@
 import React from 'react';
 import toast from 'react-hot-toast';
-const { signOut } = require('firebase/auth');
-const { auth } = require('@/db/firebase');
+import { useAuth } from '@/context/authContext';
 const Logout = () => {
+  const { logout } = useAuth();
   const handleSubmit = (e) => {
-    console.log('handle signout');
-    signOut(auth);
-    toast('Logged out Successfully', {
-      icon: '🚪',
+    logout().then((res) => {
+      toast('Logged out Successfully', {
+        icon: '🚪',
+      });
     });
   };
   return (

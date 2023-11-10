@@ -1,23 +1,24 @@
-import { NextResponse } from 'next/server';
-import { isAuthenticated } from './db/firebase';
+import { NextResponse, NextRequest } from 'next/server';
+import { cookies } from 'next/headers';
+
 export async function middleware(request) {
   const path = request.nextUrl.pathname;
-
   const isPublicPath =
     path === '/login' ||
     path === '/signup' ||
     path === '/verifyemail' ||
     path === '/forgot-password';
-  const authenticated = await isAuthenticated();
-  console.log('authenticated ', authenticated);
-  if (isPublicPath) {
-    console.log('from middleware: public');
-    // return NextResponse.redirect(new URL('/', request.nextUrl));
-  } else {
-    console.log('from middleware: protected');
-    // return NextResponse.redirect(new URL('/login', request.nextUrl));
-  }
 
+  // console.log('Mid: token ', token);
+  // if (isPublicPath && token) {
+  //   console.log('from middleware: public');
+  //   return NextResponse.redirect(new URL('/', request.nextUrl));
+  // }
+  // if (!isPublicPath && !token) {
+  //   console.log('from middleware: protected');
+  // return NextResponse.redirect(new URL('/login', request.nextUrl));
+  // }
+  console.log('middleware');
   return NextResponse.next();
 }
 

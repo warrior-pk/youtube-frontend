@@ -1,36 +1,30 @@
 'use client';
-import React from 'react';
-import { useState } from 'react';
-import { auth } from '@/db/firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
-
+import { validateLogin } from './utils/dataValidation';
+import { useAuth } from '@/context/authContext';
 const Login = () => {
-  const router = useRouter();
-
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const { login } = useAuth();
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     const email = e.target[0].value;
     const password = e.target[1].value;
-    const emailRegex = /\S+@\S+\.\S+/;
-    if (emailRegex.test(email) === false) {
-      toast.error('Invalid Email');
-      setLoading(false);
-      return;
-    }
-    if (password.length < 6) {
-      toast.error('Invalid password');
-      setLoading(false);
-      return;
-    }
+
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      toast.success('Logged in successfully');
-      router.push('/home');
+      await validateLogin(email, password);
+      const userData = { email, password };
+      await login(email, password).then((res) => {
+        setTimeout(() => {
+          toast.success('Logged in successfully');
+        }, 1000);
+        router.push('/home');
+      });
     } catch (err) {
+      console.log(err.message);
       toast.error(err.message);
     } finally {
       setLoading(false);
@@ -97,21 +91,21 @@ const Login = () => {
                 <div className='flex select-none justify-center gap-1  align-middle'>
                   {loading && (
                     <svg
-                      class='mr-3 h-5 w-5 animate-spin text-white'
+                      className='mr-3 h-5 w-5 animate-spin text-white'
                       xmlns='http://www.w3.org/2000/svg'
                       fill='none'
                       viewBox='0 0 24 24'
                     >
                       <circle
-                        class='opacity-25'
+                        className='opacity-25'
                         cx='12'
                         cy='12'
                         r='10'
                         stroke='currentColor'
-                        stroke-width='4'
+                        strokeWidth='4'
                       ></circle>
                       <path
-                        class='opacity-75'
+                        className='opacity-75'
                         fill='currentColor'
                         d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
                       ></path>
