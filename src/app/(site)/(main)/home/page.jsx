@@ -1,22 +1,19 @@
 'use client';
-import React, { useEffect } from 'react';
-import { useContext } from 'react';
-import { AuthContext } from '@/context/authContext';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import CreatePost from '@/components/home/CreatePost';
+import { useAuth } from '@/context/authContext';
 const Page = () => {
-  const { currentUser: user } = useContext(AuthContext);
-  console.log('user ', user);
+  const { currentUser, loading } = useAuth();
+  const [user, setUser] = useState(currentUser);
 
   useEffect(() => {
-    if (user) {
-      toast(`Hi, ${user.displayName}`, {
-        icon: '👏',
-      });
-    }
-  }, [user]);
+    console.log('loading', loading);
+    setUser(currentUser);
+  }, [currentUser]);
   return (
     <div className='flex w-full flex-col'>
+      <div className='username'>{user ? user.displayName : 'No user'}</div>
       <CreatePost />
     </div>
   );
