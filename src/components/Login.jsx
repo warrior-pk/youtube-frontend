@@ -68,7 +68,7 @@ const Login = () => {
                 </label>
                 <a
                   href='#'
-                  className='text-sm text-gray-400 hover:text-accent-primary-dark hover:underline focus:text-primary-col'
+                  className='hidden text-sm text-gray-400 hover:text-accent-primary-dark hover:underline focus:text-primary-col'
                 >
                   Forgot password?
                 </a>
