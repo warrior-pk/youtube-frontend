@@ -13,22 +13,15 @@ const Input = () => {
       />
       <div className='flex items-center gap-3'>
         <img className='h-6 cursor-pointer' src={Attach} alt='' />
-        <label htmlFor='file' className='cursor-pointer'>
-          {' '}
-          <img
-            className='h-6 w-6'
-            src={Img}
-            alt=''
-            onLoad={() => console.log('Image loaded')}
-          />{' '}
-        </label>
+        <label htmlFor="file" className="cursor-pointer relative">
+        <img className="h-6 w-14 " src={Img} alt="" />
         <input
-          type='file'
-          className='h-0 w-0'
-          style={{ position: 'absolute' }}
-          id='file'
+          type="file"
+          id="file"
+          className="w-0 h-0 absolute top-0 left-0"
         />
-        <button className='cursor-pointer border-none bg-indigo-500 p-3 text-white'>
+        </label>
+        <button className="border-none p-3 text-white bg-indigo-500 cursor-pointer">
           Send
         </button>
       </div>

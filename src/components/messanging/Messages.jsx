@@ -7,71 +7,49 @@ const Messages = () => {
       id: 1,
       message: 'Hello, how are you?',
       timestamp: 'early',
-      imageUrl:
-        'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
+      imageUrl: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
+      sender: 'sender',
+      image: null,
     },
     {
       id: 2,
       message: 'I am doing well, thank you!',
       timestamp: '4 min ago',
-      imageUrl:
-        'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
+      imageUrl: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
+      sender: 'receiver',
+      image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80', 
     },
     {
       id: 3,
-      message: 'I am doing well, thank you!',
-      timestamp: '3 min ago',
-      imageUrl:
-        'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
+      message: 'Hello, how are you?',
+      timestamp: 'early',
+      imageUrl: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
+      sender: 'sender',
+      image: null,
     },
     {
       id: 4,
       message: 'I am doing well, thank you!',
-      timestamp: '2 min ago',
-      imageUrl:
-        'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
+      timestamp: '4 min ago',
+      imageUrl: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
+      sender: 'receiver',
+      image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80', 
     },
     {
       id: 5,
-      message: 'I am doing well, thank you!',
-      timestamp: '1 min ago',
-      imageUrl:
-        'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
+      message: 'Hello, how are you?',
+      timestamp: 'early',
+      imageUrl: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
+      sender: 'sender',
+      image: null,
     },
     {
       id: 6,
       message: 'I am doing well, thank you!',
-      timestamp: 'just now',
-      imageUrl:
-        'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
-    },
-    {
-      id: 7,
-      message: 'I am doing well, thank you!',
-      timestamp: 'just now',
-      imageUrl:
-        'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
-    },
-    {
-      id: 8,
-      message: 'I am doing well, thank you!',
-      timestamp: 'just now',
-      imageUrl:
-        'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
-    },
-    {
-      id: 9,
-      message: 'I am doing well, thank you!',
-      timestamp: 'just now',
-      imageUrl:
-        'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
-    },
-    {
-      id: 10,
-      message: 'I am doing well, thank you!',
-      timestamp: 'just now',
-      imageUrl:
-        'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
+      timestamp: '4 min ago',
+      imageUrl: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
+      sender: 'receiver',
+      image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80', 
     },
   ];
 
@@ -79,10 +57,12 @@ const Messages = () => {
     <div className='scrollable bg-yellow-100 p-10'>
       {messages.map((message) => (
         <Message
-          key={message.id} // Provide a unique key
-          message={message.message}
-          timestamp={message.timestamp}
-          imageUrl={message.imageUrl}
+        key={message.id}
+        message={message.message}
+        timestamp={message.timestamp}
+        imageUrl={message.imageUrl}
+        sender={message.sender}
+        image={message.image}
         />
       ))}
     </div>
