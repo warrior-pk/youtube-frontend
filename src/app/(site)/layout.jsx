@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
   title: 'Sphere',
   description: 'Like and Match',
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({ children }) {
