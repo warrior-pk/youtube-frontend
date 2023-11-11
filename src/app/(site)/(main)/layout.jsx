@@ -1,39 +1,25 @@
 'use client';
-import React, { useContext, useState, useEffect } from 'react';
-import { AuthContext } from '@/context/authContext';
-import { redirect } from 'next/navigation';
-import Loading from '@/components/Loading';
+import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
-
+import { usePath } from '@/context/pathContext';
+import { useAuth } from '@/context/authContext';
 const Layout = ({ children }) => {
-  // const { loadingCurrentUser, currentUser } = useContext(AuthContext);
-  // const [shouldRender, setShouldRender] = useState(false);
+  const { currentUser } = useAuth();
+  const [user, setUser] = useState(currentUser);
+  const { pathname } = usePath();
+  const activePage = pathname.split('/')[1];
 
-  // useEffect(() => {
-  //   const waitUntilFalse = async () => {
-  //     while (loadingCurrentUser) {
-  //       await new Promise((resolve) => setTimeout(resolve, 100)); // Adjust the delay as needed
-  //     }
-  //     setShouldRender(true);
-  //   };
-  //   waitUntilFalse();
-  // }, [loadingCurrentUser]);
-
-  // useEffect(() => {
-  //   if (shouldRender && !currentUser) {
-  //     redirect('/login');
-  //   }
-  // }, [shouldRender, currentUser]);
+  useEffect(() => {
+    setUser(currentUser);
+  }, [currentUser]);
 
   return (
-    <>
-      {/* {!shouldRender && <Loading />} */}
-      {/* {shouldRender && ( */}
-      <>
-        <Navbar children={children} />
-      </>
-      {/* )} */}
-    </>
+    <div className=''>
+      {/* <div className='username absolute left-1/2 top-0'>
+        {user ? user.displayName : 'No user'}
+      </div> */}
+      <Navbar children={children} activePage={activePage} user={user} />
+    </div>
   );
 };
 

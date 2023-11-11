@@ -7,7 +7,7 @@ const notify = () => toast.success('Here is your toast.');
 
 const Page = () => {
   return (
-    <main>
+    <main className='full-height'>
       <button onClick={notify}>Make me a toast</button>
     </main>
   );

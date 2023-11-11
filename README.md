@@ -29,7 +29,7 @@ Here is what you need to be able to run **sphere**.
    
 3. Git working branch setup
 
-	 If there is a branch named feature-your_name on github, then just run.
+	 If there is a branch named feature-your_name on GitHub, then just run.
 	 ``` bash
 		git checkout feature-your_name
 	 ```
@@ -58,13 +58,13 @@ Here is what you need to be able to run **sphere**.
    - Create a `.env.local` file in the root directory
    - Assign environment variables mentioned below with proper values.
 	```bash
-		NEXT_PUBLIC_apiKey=""
-		NEXT_PUBLIC_authDomain=""
-		NEXT_PUBLIC_projectId=""
-		NEXT_PUBLIC_storageBucket=""
-		NEXT_PUBLIC_messagingSenderId=""
-		NEXT_PUBLIC_appId=""
-		NEXT_PUBLIC_measurementId=""
+	NEXT_PUBLIC_apiKey=""
+	NEXT_PUBLIC_authDomain=""
+	NEXT_PUBLIC_projectId=""
+	NEXT_PUBLIC_storageBucket=""
+	NEXT_PUBLIC_messagingSenderId=""
+	NEXT_PUBLIC_appId=""
+	NEXT_PUBLIC_measurementId=""
 	```
 6. Run the project
   

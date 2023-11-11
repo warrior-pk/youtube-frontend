@@ -5,7 +5,7 @@ const Page = () => {
   return (
     <main>
       <div className='bg-secondary-off '>
-        <div className='flex h-screen justify-center'>
+        <div className='full-height flex justify-center'>
           <Hero />
           <Signup />
         </div>
