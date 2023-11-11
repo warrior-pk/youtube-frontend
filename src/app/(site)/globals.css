@@ -21,12 +21,25 @@
   overflow-y: scroll;
   display: none; /* Safari and Chrome */
 }
+.container-width {
+  @apply min-w-[min(100%-0.5rem,50rem)];
+}
 
+.full-height {
+  @apply h-screen;
+}
+
+/* BUG: fix this for landscape */
+/* @media screen and (orientation: landscape) {
+  .full-height {
+    max-height: max(100vh, 100vw);
+  }
+} */
 .nav-item {
   @apply flex cursor-pointer justify-center rounded-lg px-2 py-2 text-lg hover:bg-white/50 md:px-5 lg:justify-start lg:gap-2;
 }
 .sidebar {
-  @apply flex h-screen flex-col  bg-[#ffc629] px-2 py-5 text-[#333333] shadow-lg md:p-5 lg:min-w-[rem];
+  @apply full-height flex flex-col  bg-[#ffc629] px-2 py-5 text-[#333333] shadow-lg md:p-5 lg:min-w-[rem];
 }
 @layer utilities {
   .chosen {
