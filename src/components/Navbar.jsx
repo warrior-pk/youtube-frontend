@@ -3,14 +3,13 @@ import Logout from './Logout';
 import Link from 'next/link';
 import { useState } from 'react';
 
-const Navbar = ({ children, activePage }) => {
+const Navbar = ({ children, activePage, user }) => {
   const [active, setActive] = useState('home');
-  const [hideNave, setHideNave] = useState(false);
+  const [userInfo, setUserInfo] = useState(user);
   useEffect(() => {
     setActive(activePage);
-    if (activePage === 'match') {
-    }
-  }, [activePage]);
+    setUserInfo(user);
+  }, [activePage, user]);
 
   const handleNavItemClick = (item) => {
     setActive(item);
@@ -136,7 +135,7 @@ const Navbar = ({ children, activePage }) => {
           <Logout />
         </div>
         <div className='flex grow'>
-          <div className='mx-auto flex h-screen min-w-[min(100%-0.5rem,50rem)] px-2 py-5 md:px-5 md:py-5'>
+          <div className='container-width full-height mx-auto flex  px-2 py-5 md:px-5 md:py-5'>
             {children}
           </div>
         </div>
