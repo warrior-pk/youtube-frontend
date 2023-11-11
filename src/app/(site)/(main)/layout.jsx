@@ -12,12 +12,13 @@ const Layout = ({ children }) => {
   useEffect(() => {
     setUser(currentUser);
   }, [currentUser]);
+
   return (
     <div className=''>
       {/* <div className='username absolute left-1/2 top-0'>
         {user ? user.displayName : 'No user'}
       </div> */}
-      <Navbar children={children} activePage={activePage} />
+      <Navbar children={children} activePage={activePage} user={user} />
     </div>
   );
 };

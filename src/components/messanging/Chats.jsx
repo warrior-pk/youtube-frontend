@@ -25,7 +25,7 @@ const Chats = () => {
         <Link href={`/inbox/${item[0]}`} key={item[0]}>
           <div
             key={item[0]}
-            className='flex cursor-pointer items-center gap-3 p-3 text-white hover:bg-yellow-700'
+            className='flex cursor-pointer items-center gap-4 p-3 text-black hover:bg-yellow-300'
           >
             <img
               className='h-10 w-10 rounded-full object-cover'
