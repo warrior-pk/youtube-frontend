@@ -12,10 +12,25 @@
   color: #010101;
   background: #ffc629;
 }
+.scrollable {
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollable::-webkit-scrollbar {
+  overflow-y: scroll;
+  display: none; /* Safari and Chrome */
+}
 
+.nav-item {
+  @apply flex cursor-pointer justify-center rounded-lg px-2 py-2 text-lg hover:bg-white/50 md:px-5 lg:justify-start lg:gap-2;
+}
+.sidebar {
+  @apply flex h-screen flex-col  bg-[#ffc629] px-2 py-5 text-[#333333] shadow-lg md:p-5 lg:min-w-[rem];
+}
 @layer utilities {
   .chosen {
-    @apply rounded-lg bg-slate-100 font-bold;
+    @apply bg-secondary-off bg-opacity-60  shadow-md backdrop-blur-sm backdrop-filter hover:bg-secondary-off;
   }
   .logo {
     /* font-family: 'Geologica', sans-serif; */

@@ -1,19 +1,22 @@
 import React from 'react';
 import toast from 'react-hot-toast';
-const { signOut } = require('firebase/auth');
-const { auth } = require('@/db/firebase');
+import { useAuth } from '@/context/authContext';
+import { useRouter } from 'next/navigation';
 const Logout = () => {
+  const router = useRouter();
+  const { logout } = useAuth();
   const handleSubmit = (e) => {
-    console.log('handle signout');
-    signOut(auth);
-    toast('Logged out Successfully', {
-      icon: '🚪',
+    logout().then((res) => {
+      toast('Logged out Successfully', {
+        icon: '🚪',
+      });
+      router.push('/login');
     });
   };
   return (
     <div
       onClick={handleSubmit}
-      className='items mb-52 mt-auto flex justify-center px-2 py-2 text-lg md:px-5 lg:justify-start lg:gap-2'
+      className='nav-item mb-[calc(0.1*100svh)] mt-auto'
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'

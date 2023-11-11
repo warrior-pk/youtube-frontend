@@ -24,3 +24,15 @@ export const validateRegistraion = async (
   }
   return '';
 };
+
+export const validateLogin = async (email, password) => {
+  const emailRegex = /\S+@\S+\.\S+/;
+  if (emailRegex.test(email) === false) {
+    throw new Error('Invalid Email');
+  }
+
+  if (password.length < 6) {
+    throw new Error('Password must be at least 6 characters');
+  }
+  return;
+};
