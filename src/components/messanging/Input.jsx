@@ -1,10 +1,11 @@
+'use client';
 import React from 'react';
 
 const Input = () => {
   const Attach = '/assets/messanging/attach.png';
   const Img = '/assets/messanging/img.png';
   return (
-    <div className='h-15 flex items-center justify-between bg-white p-3'>
+    <div className='flex items-center justify-between bg-white p-3'>
       <input
         type='text'
         placeholder='Type Something...'

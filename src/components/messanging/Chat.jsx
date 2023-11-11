@@ -2,16 +2,16 @@ import React from 'react';
 import Messages from './Messages';
 import Input from './Input';
 
-const Chat = () => {
+const Chat = ({ id }) => {
   return (
-    <div className="chat-container flex-1 flex flex-col">
-      <div className="chat-header h-15 bg-yellow-300 flex items-center justify-between p-3 text-lightgray">
-        <span className="text-lg sm:text-xl md:text-2xl lg:text-2.4xl xl:text-2.7xl">PK</span>
-        <div className="flex gap-3">
-        </div>
+    <div className='flex w-full flex-col'>
+      <div className='chat-header text-lightgray flex items-center justify-between bg-yellow-300 p-3'>
+        <span className='text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl'>
+          {`param : ${id}`}
+        </span>
       </div>
-      <Messages className="h-full sm:h-1" />
-      <Input />
+      <Messages className='scrollable flex grow' />
+      <Input className='' />
     </div>
   );
 };
