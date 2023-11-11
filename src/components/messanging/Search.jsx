@@ -82,14 +82,14 @@ const Search = () => {
           onChange={(e) => setUsername(e.target.value)}
           type='text'
           placeholder='Find a user'
-          className='text-black-700 border-none bg-yellow-400 pl-1 placeholder-gray-500 outline-none'
+          className='text-black-700 border-none bg-transparent pl-3 placeholder-gray-500 outline-none'
           value={username}
         />
       </div>
       {Err && <span>No user with this name</span>}
       {user && (
         <div
-          className='flex cursor-pointer items-center gap-3 p-3 text-white hover:bg-yellow-700'
+          className='flex cursor-pointer items-center gap-3 p-3 text-black hover:bg-yellow-300'
           onClick={handleSelect}
         >
           <img
