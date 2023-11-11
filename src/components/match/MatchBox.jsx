@@ -5,7 +5,6 @@ const name = 'Prakhar';
 const img1 = '/assets/sewy.jpg';
 const imageStyle = {
   borderRadius: '2%',
-  border: '1px solid #fff',
   width: '20rem',
 };
 const MatchBox = () => {
